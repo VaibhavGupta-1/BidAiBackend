@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(cors());
 
 // PASTE YOUR SUPABASE URL HERE (Select "Transaction Pooler" / Port 6543)
-const connectionString = 'postgresql://postgres.flfqpehvciqbspusumro:VaibhavTest123@aws-1-ap-south-1.pooler.supabase.com:6543/postgres';
+const connectionString = process.env.DATABASE_URL;
 
 const pool = new Pool({ connectionString, ssl: { rejectUnauthorized: false } });
 
